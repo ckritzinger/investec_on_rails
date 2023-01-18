@@ -1,0 +1,20 @@
+<h1>Welcome</h1>
+<p>Here are your transactions</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Description</th>
+      <th scope="col">Amount</th>
+    </tr>
+  </thead>
+  <tbody>
+<% @transactions.each do |transaction|%>   
+ <tr>
+      <th scope="row"><%= transaction['transactionDate'] %></th>
+      <td><%= transaction['description'] %></td>
+      <td><%= transaction['amount'] %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

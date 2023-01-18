@@ -1,0 +1,22 @@
+<h1>Welcome</h1>
+<p>Here are your accounts</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Account Number</th>
+      <th scope="col">Account Name</th>
+      <th scope="col">Reference Name</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+<% @accounts.each do |account|%>   
+ <tr>
+      <th scope="row"><%= account['accountNumber'] %></th>
+      <td><%= account['accountName'] %></td>
+      <td><%= account['referenceName'] %></td>
+      <td><%= link_to 'Show', transactions_path(account['accountId']) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
