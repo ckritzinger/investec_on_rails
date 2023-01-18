@@ -16,8 +16,6 @@ rails s
 
 Now click [here](http://localhost:3000)
 
-Although the app references a Postgres DB, it's not used and as far as I can see you don't need to have it running.
-
 ## TODO List
 
  - Make a payment
