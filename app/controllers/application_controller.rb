@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-
   def authenticated?
     username.present? && password.present? && api_key.present?
   end
