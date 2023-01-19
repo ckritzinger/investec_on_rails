@@ -19,9 +19,11 @@ Now click [here](http://localhost:3000)
 ## TODO List
 
  - Make a payment
+ - Show beneficiaries
  - Make multiple payments at the same time
  - Make it less fugly
  - Cache account details, access token and such things to speed up requests
+ - Add pagination to the transactions page
 
 
  ### Original List
@@ -37,11 +39,18 @@ Now click [here](http://localhost:3000)
 
 ## Done
 
- - "Log In" by entering API keys, save in Cookies
  - Basic API interaction in a lib
  - Simple landing page showing Accounts
- - Click from account through to see transactions
+ - Click from account through to see transactions 
+ - "Log In" by entering API keys, save in Cookies
+ 
 
+## Chronology
+
+ - Spent about 30 minutes trying to get API to work before concluding something was wrong
+ - Checked in with Nick B, got confirmation from him that account was fine, found issue (about 15 min)
+ - Basic API wrapper in ruby (about 20 min)
+ - Minimalist app with account and transactions, simple cookie-based login/logout (About an hour)
 
 ## Docs Still to be written
 
