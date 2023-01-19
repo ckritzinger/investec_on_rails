@@ -1,0 +1,32 @@
+<h1>New Payment to <%= @beneficiary['name'] %></h1>
+<%= form_tag create_payment_path do %>
+<div class="card">
+  <div class="card-body">
+
+    <%= hidden_field_tag :beneficiary_id, @beneficiary['beneficiaryId'] %>
+
+    <div class="mb-3">
+      <%= label_tag :account_id, 'From Account', { class: "form-label"} %>
+      <%= select_tag :account_id, options_for_select(@accounts.map{|a| [ "#{a['referenceName']} (#{a['productName']})", a['accountId']]}) %>
+    </div>
+
+    <div class="mb-3">
+      <%=label_tag :amount, 'Amount', { class: "form-label"} %>
+      <%=text_field_tag :amount %>
+    </div>
+
+    <div class="mb-3">
+      <%=label_tag :their_reference, 'Their Reference', { class: "form-label"} %>
+      <%=text_field_tag :their_reference %>
+    </div>
+
+    <div class="mb-3">
+      <%=label_tag :my_reference, 'My Reference', { class: "form-label"} %>
+      <%=text_field_tag :my_reference%>
+    </div>
+
+    <%= submit_tag "Pay Now", class: "btn btn-primary" %>
+
+  </div>
+</div>
+<% end %>

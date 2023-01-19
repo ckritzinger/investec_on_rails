@@ -1,6 +1,7 @@
+# frozen_string_literal: true
+
 class LoginController < ApplicationController
-  def index
-  end
+  def index; end
 
   def logout
     cookies.delete(:username)
@@ -10,10 +11,9 @@ class LoginController < ApplicationController
   end
 
   def auth
-
     begin
-      Api.new(params[:client_id],params[:secret],params[:api_key]).authenticate!
-    rescue => exception
+      Api.new(params[:client_id], params[:secret], params[:api_key]).authenticate!
+    rescue StandardError => e
       render :index and return
     end
 

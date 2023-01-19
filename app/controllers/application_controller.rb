@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 class ApplicationController < ActionController::Base
   def authenticated?
     username.present? && password.present? && api_key.present?
   end
 
   def investec
-    @investec ||= Api.new(username,password,api_key).authenticate!
+    @investec ||= Api.new(username, password, api_key).authenticate!
   end
 
   def username

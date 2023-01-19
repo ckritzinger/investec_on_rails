@@ -1,0 +1,24 @@
+<h1>Beneficiaries</h1>
+<p>Here are your beneficiaries</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Account Number</th>
+      <th scope="col">Bank</th>
+      <th scope="col">Last Payment</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+<% @beneficiaries.each do |beneficiary|%>   
+ <tr>
+      <th scope="row"><%= beneficiary['beneficiaryName'] %></th>
+      <td><%= beneficiary['accountNumber'] %></td>
+      <td><%= beneficiary['bank'] %> (<%= beneficiary['code'] %>)</td>
+      <td><%= beneficiary['lastPaymentAmount'] %> on <%= beneficiary['lastPaymentDate'] %></td>
+      <td><%= link_to 'Pay Now', new_payment_path(beneficiary['beneficiaryId']) %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

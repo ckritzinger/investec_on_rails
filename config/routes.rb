@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  get 'login/index' => 'login#index', as: :login
+  get 'payments/new/:beneficiary_id' => 'payments#new', as: :new_payment
+  post 'payments/create' => 'payments#create', as: :create_payment
+  get 'beneficiaries/index' => 'beneficiaries#index', as: :beneficiaries
+  get '/login/index' => 'login#index', as: :login
   get 'login/logout' => 'login#logout', as: :logout
   post 'login/auth' => 'login#auth', as: :auth
   
