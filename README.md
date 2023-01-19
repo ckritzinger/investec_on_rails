@@ -2,6 +2,8 @@
 
 This app is a proof-of-concept built primarily to showcase the capabilities of the Investec Programmable banking API.
 
+You can see a running version here: [https://investec-on-rails.onrender.com/]
+
 ## Prerequisites
 
 You'll need to have a ruby version manager installed that respects the .ruby-version file. [Rbenv](https://github.com/rbenv/rbenv) is recommended, along with [Ruby-build](https://github.com/rbenv/ruby-build#readme).
