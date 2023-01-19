@@ -2,7 +2,7 @@
 
 This app is a proof-of-concept built primarily to showcase the capabilities of the Investec Programmable banking API.
 
-You can see a running version here: [https://investec-on-rails.onrender.com/]
+You can see a running version here: https://investec-on-rails.onrender.com/
 
 ## Prerequisites
 
