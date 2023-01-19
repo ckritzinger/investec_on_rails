@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+
+  helper_method :authenticated?
+  
   def authenticated?
     username.present? && password.present? && api_key.present?
   end

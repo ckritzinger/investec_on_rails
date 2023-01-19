@@ -8,10 +8,44 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <style>
+        main > .container {
+          padding: 80px 80px 0;
+        }
+    </style>
   </head>
-
-  <body>
-    <%=  link_to "Logout", logout_path %>
-    <%= yield %>
+  <body class="d-flex flex-column h-100">
+    <header>
+      <!-- Fixed navbar -->
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand mx-5" href="#"><%= image_tag 'logo.png', style: 'height: 30px; margin-right: 10px; margin-bottom: 5px;' %>Investec Programmable Banking Demo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse mx-5" id="navbarCollapse">
+          <%if authenticated? %>
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="/">Accounts</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="<%= beneficiaries_path %>">Payments</a>
+              </li>
+            </ul>
+          <% end%>
+          <%=  link_to "Logout", logout_path, { class: "ms-auto link-light" } %>
+        </div>
+      </nav>
+    </header>
+    <main role="main" class="flex-shrink-0">
+      <div class="container">
+        <%= yield %>
+      </div>
+    </main>
+    <footer class="footer mt-auto py-3 bg-light" style="position: fixed; bottom: 0; right: 0; left: 0">
+      <div class="container">
+        <span class="text-muted"><a href="">More information.</a></span>
+      </div>
+    </footer>
   </body>
 </html>

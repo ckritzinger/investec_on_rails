@@ -6,6 +6,8 @@
       <th scope="col">Account Number</th>
       <th scope="col">Account Name</th>
       <th scope="col">Reference Name</th>
+      <th scope="col">Current Balance</th>
+      <th scope="col">Available Balance</th>
       <th scope="col"></th>
     </tr>
   </thead>
@@ -15,7 +17,9 @@
       <th scope="row"><%= account['accountNumber'] %></th>
       <td><%= account['accountName'] %></td>
       <td><%= account['referenceName'] %></td>
-      <td><%= link_to 'Show', transactions_path(account['accountId']) %></td>
+      <td><%= @balances[account['accountId']]['currentBalance'] %></td>
+      <td><%= @balances[account['accountId']]['availableBalance'] %></td>
+      <td><%= link_to 'Transactions', transactions_path(account['accountId']) %></td>
     </tr>
     <% end %>
   </tbody>

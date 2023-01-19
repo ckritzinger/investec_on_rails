@@ -18,12 +18,11 @@ Now click [here](http://localhost:3000)
 
 ## TODO List
 
- - Make a payment
- - Show beneficiaries
- - Make multiple payments at the same time
  - Make it less fugly
  - Cache account details, access token and such things to speed up requests
- - Add pagination to the transactions page
+ - Add fake pagination to the transactions page
+ - Make multiple payments at the same time
+ - Make transaction pagination work
 
 
  ### Original List
@@ -43,6 +42,9 @@ Now click [here](http://localhost:3000)
  - Simple landing page showing Accounts
  - Click from account through to see transactions 
  - "Log In" by entering API keys, save in Cookies
+ - Show beneficiaries
+ - Make a payment
+
  
 
 ## Chronology
