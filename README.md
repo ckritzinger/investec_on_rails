@@ -16,15 +16,12 @@ rails s
 
 Now click [here](http://localhost:3000)
 
-## TODO List
+## TODO List (stack ranked)
 
- - Make it less fugly
  - Cache account details, access token and such things to speed up requests
  - Add fake pagination to the transactions page
  - Make multiple payments at the same time
  - Make transaction pagination work
-
-
  ### Original List
 
 - I can sign in and set my API keys, and sign out
@@ -44,8 +41,19 @@ Now click [here](http://localhost:3000)
  - "Log In" by entering API keys, save in Cookies
  - Show beneficiaries
  - Make a payment
+ - Make it less fugly
 
+ ## Thought Process/Approach
+
+ I treated this as though I would be demoing it to stakeholders in the bank as a "here is a starting point that we're giving developers to work with". Making it look good is less important for the devs who would be using it, but IMO important for a demo to the bank.
  
+ The idea was to create something that showed what the API could do, without getting fancy. So Slack integration didn't really make sense to me. Multiple payments is just a hassle from a UI/UX point of view and doesn't really add much to the functionality.
+
+ The main thing that I was sad about not adding was caching. The API is pretty slow and the very inefficient approach to using it makes things seem laggy and annoying.  I'd probably be able to improve that a lot in about 30 min or an hour of work.
+
+ I don't like hard-coding things like API keys (because it's really bad practice), so I spent some effort to make the login flow. I think this would also make the demo a lot nicer, because you could demo with a real bank account and/or multiple accounts. 
+ 
+ In the interest of simplicity, I didn't add any DB models. Doesn't make things that much simpler 🤷‍♂️.
 
 ## Chronology
 
@@ -53,6 +61,8 @@ Now click [here](http://localhost:3000)
  - Checked in with Nick B, got confirmation from him that account was fine, found issue (about 15 min)
  - Basic API wrapper in ruby (about 20 min)
  - Minimalist app with account and transactions, simple cookie-based login/logout (About an hour)
+ - Beneficiaries and payments (about an hour)
+ - Make it look a bit nicer; finish documentation (about an hour)
 
 ## Docs Still to be written
 
